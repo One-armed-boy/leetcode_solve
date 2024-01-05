@@ -17,13 +17,16 @@ class Solution {
                 int nextIdx = currIdx + hop;
                 // System.out.println(nextIdx);
                 
-                if (nextIdx < nums.length && !visited[nextIdx]) {
-                    if (nextIdx == nums.length - 1) {
-                        return true;
-                    }
-                    queue.add(nextIdx);   
-                    visited[nextIdx] = true;
+                if (nextIdx >= nums.length || visited[nextIdx]) {
+                    continue;
                 }
+                
+                if (nextIdx == nums.length - 1) {
+                    return true;
+                }
+                
+                queue.add(nextIdx);   
+                visited[nextIdx] = true;
             }
         }
         
