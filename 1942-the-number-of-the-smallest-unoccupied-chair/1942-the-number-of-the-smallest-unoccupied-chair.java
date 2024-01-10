@@ -3,11 +3,10 @@ class Solution {
         PriorityQueue<int[]> eventQ = new PriorityQueue<>((a,b)->{
             if (a[0] == b[0]) {
                 return a[1] - b[1];
-            } else if (a[0] < b[0]) {
-                return -1;
-            } else {
-                return 1;
-            }
+            } 
+            
+            return a[0] - b[0];
+            
         });
         
         for (int friendIdx = 0; friendIdx < times.length; friendIdx++) {
