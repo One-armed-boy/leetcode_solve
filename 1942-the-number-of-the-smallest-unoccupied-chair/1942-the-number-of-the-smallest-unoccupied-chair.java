@@ -26,6 +26,8 @@ class Solution {
         
         HashMap<Integer, Integer> sitMap = new HashMap<>();
         
+        int result = 0;
+        
         while (!eventQ.isEmpty()) {
             int[] event = eventQ.poll();
             int eventTime = event[0];
@@ -35,7 +37,8 @@ class Solution {
             if (isArrival) {
                 int nextChair = chairQ.poll();
                 if (targetFriend == friend) {
-                    return nextChair;
+                    result = nextChair;
+                    break;
                 }
                 sitMap.put(friend, nextChair);
             } else {
@@ -46,7 +49,6 @@ class Solution {
             
         }
         
-        
-        return 0;
+        return result;
     }
 }
