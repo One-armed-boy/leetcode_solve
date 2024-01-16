@@ -30,12 +30,12 @@ class Solution {
         }
         
         if (y == 0) {
-            memo[y][x] = dp(y, x-1, obs);
+            memo[y][x] = dp(y, x - 1, obs);
             return memo[y][x];
         }
         
         if (x == 0) {
-            memo[y][x] = dp(y-1, x, obs);
+            memo[y][x] = dp(y - 1, x, obs);
             return memo[y][x];
         }
         
