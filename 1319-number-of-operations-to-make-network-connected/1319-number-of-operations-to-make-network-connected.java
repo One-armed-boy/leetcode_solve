@@ -28,7 +28,8 @@ class Solution {
         if (node == parents[node]) {
             return node;
         }
-        return find(parents[node]);
+        parents[node] = find(parents[node]);
+        return parents[node];
     }
 
     private void union(int node1, int node2) {
