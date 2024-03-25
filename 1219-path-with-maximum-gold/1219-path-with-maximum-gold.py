@@ -21,6 +21,8 @@ class DfsSearcher:
             self.__dy = [1, -1, 0 , 0]
 
         def dfs(self, y, x):
+            if self.__grid[y][x] == 0:
+                return 0
             tmp = self.__grid[y][x]
             self.__grid[y][x] = 0 
             maxValue = 0
