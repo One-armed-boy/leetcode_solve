@@ -17,19 +17,13 @@ class Solution:
         result = 0
         isFind = False
         for side in range(maxSide, 1, -1):
-            if isFind:
-                break
             for upperY in range(h - side + 1):
-                if isFind:
-                    break
                 for leftX in range(w - side + 1):
-                    if isFind:
-                        break
-                    if self.checkSquare(upperY, leftX, side):
-                        isFind = True
-                        result = side ** 2
+                    if not self.checkSquare(upperY, leftX, side):
+                        continue
+                    return side ** 2
         
-        return max(result, 1)
+        return 1
     
     def checkSquare(self, y, x, side):
         return (self.checkWidth(y, x, side) 
