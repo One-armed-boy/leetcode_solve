@@ -45,6 +45,9 @@ class Solution {
     }
 
     private void dfs(TreeNode curr) {
+        if (result) {
+            return;
+        }
         if (curr == null || curr.val == 0) {
             return;
         }
