@@ -7,7 +7,7 @@ class Solution:
 
         answer = 1
         for idx in range(1, n):
-            if idx >= enterTimes[idx] and enterTimes[idx] - enterTimes[idx - 1] < 1:
+            if idx >= enterTimes[idx]:
                 return answer
             answer += 1
         return answer
